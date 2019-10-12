@@ -56,13 +56,12 @@ export default () => {
       {isAvailable && (
         <div>
           <button onClick={getCurrentPosition}>Get Current Position</button>
-          {!isWatching && (
-            <button onClick={startWatchPosition}>Start Watch Position</button>
-          )}
-          {isWatching && (
+          {isWatching ? (
             <button onClick={() => stopWatchPosition(watchStatus)}>
               Stop Watch Position
             </button>
+          ) : (
+            <button onClick={startWatchPosition}>Start Watch Position</button>
           )}
           <div>
             <h3>Position</h3>
